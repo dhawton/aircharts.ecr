@@ -22,7 +22,9 @@ input {
 :-ms-input-placeholder {
     text-transform: initial;
 }
-#searchbox { text-transform: uppercase; }
+.SearchForm input {
+    margin-right: 5px;
+}
 
 .btn-green {
     background-image: linear-gradient(to bottom, #5cb58c 0, #419641 100%);

@@ -23,8 +23,8 @@ class SearchBox extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input type="text" onChange={this.handleChange} placeholder="Airport Identifier" value={this.state.value}/>&nbsp;
+            <form onSubmit={this.handleSubmit} className="SearchForm">
+                <input type="text" onChange={this.handleChange} placeholder="Airport Identifier" value={this.state.value}/>
                 <button className="btn-green" type="submit">Search</button>
             </form>
         )
