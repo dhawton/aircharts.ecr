@@ -12,7 +12,7 @@ class SearchBox extends Component {
 
     handleChange(e) {
         this.setState({
-            value: e.target.value
+            value: e.target.value.toUpperCase()
         });
     }
 
@@ -24,7 +24,7 @@ class SearchBox extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" id="searchbox" placeholder="Airport Identifier" value={this.state.value}/>&nbsp;
+                <input type="text" onChange={this.handleChange} placeholder="Airport Identifier" value={this.state.value}/>&nbsp;
                 <button className="btn-green" type="submit">Search</button>
             </form>
         )
