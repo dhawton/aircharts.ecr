@@ -1,0 +1,41 @@
+button {
+    cursor: pointer;
+}
+input {
+    padding: 5px 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+::-webkit-input-placeholder {
+    text-transform: initial;
+}
+
+:-moz-placeholder {
+    text-transform: initial;
+}
+
+::-moz-placeholder {
+    text-transform: initial;
+}
+
+:-ms-input-placeholder {
+    text-transform: initial;
+}
+#searchbox { text-transform: uppercase; }
+
+.btn-green {
+    background-image: linear-gradient(to bottom, #5cb58c 0, #419641 100%);
+    background-repeat: repeat-x;
+    color: rgb(255,255,255);
+    border: 1px solid #3e8f3e;
+    padding: 5px 15px;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 4px;
+}
+.btn-green:hover,
+.btn-green:focus {
+    background-color: #419641;
+    background-position: 0 -15px;
+}
