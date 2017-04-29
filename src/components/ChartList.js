@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
+import ChartButton from './ChartButton.js';
 
 class ChartList extends Component {
     constructor(props) {
@@ -29,9 +30,9 @@ class ChartList extends Component {
                         </TabList>
 
                         <TabPanel>
-                            {this.props.chartData.charts.General.map((chart) => {
+                            {this.props.chartData.charts.General.map((chart, i) => {
                                 console.log(chart);
-                                return (<a href="#" key="{chart.id}">{chart.name}</a>);
+                                return <ChartButton chartName={chart.chartname} chartUrl={chart.proxy} chartId={chart.id} onChartOpen={this.props.onChartOpen} />
                             })}
                         </TabPanel>
                         <TabPanel>
