@@ -1,0 +1,7 @@
+.loading {
+    background: #191919 url(/static/images/loader.gif) no-repeat center center;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 500px;
+    height: 100%;
+}

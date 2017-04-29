@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './SearchBox.css';
+import api from '../utils/api.js';
 
 class SearchBox extends Component {
     constructor(props) {
@@ -17,7 +18,15 @@ class SearchBox extends Component {
     }
 
     handleSubmit(e) {
-        console.log("Got submission: " + this.state.value);
+        api.searchChart(this.state.value).then((response) => {
+            this.props.onSearch(response);
+        }).catch((error) => {
+            if (error.response.status === 404) {
+                alert("No charts found for that airport.");
+            } else {
+                alert("Unknown error occured");
+            }
+        });
         e.preventDefault();
     }
 
@@ -25,7 +34,7 @@ class SearchBox extends Component {
         return (
             <form onSubmit={this.handleSubmit} className="SearchForm">
                 <input type="text" onChange={this.handleChange} placeholder="Airport Identifier" value={this.state.value}/>
-                <button className="btn-green" type="submit">Search</button>
+                <input type="submit" value="Search" className="btn-green" />
             </form>
         )
     }
