@@ -4,7 +4,7 @@ import './ChartButton.css';
 class ChartButton extends Component {
     render() {
         return (
-            <button className="chartButton">{this.props.chartName}</button>
+            <button className="chartButton" dangerouslySetInnerHTML={{__html : this.props.chartName}}></button>
         );
     }
 }

@@ -37,7 +37,7 @@ class ChartList extends Component {
                             }) : "No charts available" }
                         </TabPanel>
                         <TabPanel>
-                            {(typeof this.props.chartData.charts.STAR === "object") ? this.props.chartData.STAR.General.map((chart, i) => {
+                            {(typeof this.props.chartData.charts.STAR === "object") ? this.props.chartData.charts.STAR.map((chart, i) => {
                                 return <ChartButton key={i} chartName={chart.chartname} chartUrl={chart.proxy} chartId={chart.id} onChartOpen={this.props.onChartOpen} />
                             }) : "No charts available" }
                         </TabPanel>
