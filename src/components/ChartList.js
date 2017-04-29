@@ -3,10 +3,6 @@ import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import ChartButton from './ChartButton.js';
 
 class ChartList extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let r = "";
         if (typeof this.props.chartData === "string") {
@@ -16,6 +12,7 @@ class ChartList extends Component {
                 )
             }
         } else {
+            console.log(this.props.chartData.charts);
             r = (
                 <div className="padleft padright">
                     <h2>{this.props.chartData.info.id} - {this.props.chartData.info.name}</h2>
@@ -30,22 +27,29 @@ class ChartList extends Component {
                         </TabList>
 
                         <TabPanel>
-                            {this.props.chartData.charts.General.map((chart, i) => {
-                                console.log(chart);
-                                return <ChartButton chartName={chart.chartname} chartUrl={chart.proxy} chartId={chart.id} onChartOpen={this.props.onChartOpen} />
-                            })}
+                            {(typeof this.props.chartData.charts.General === "object") ? this.props.chartData.charts.General.map((chart, i) => {
+                                return <ChartButton key={i} chartName={chart.chartname} chartUrl={chart.proxy} chartId={chart.id} onChartOpen={this.props.onChartOpen} />
+                            }) : "No charts available" }
                         </TabPanel>
                         <TabPanel>
-                            SIDs
+                            {(typeof this.props.chartData.charts.SID === "object") ? this.props.chartData.charts.SID.map((chart, i) => {
+                                return <ChartButton key={i} chartName={chart.chartname} chartUrl={chart.proxy} chartId={chart.id} onChartOpen={this.props.onChartOpen} />
+                            }) : "No charts available" }
                         </TabPanel>
                         <TabPanel>
-                            STARs
+                            {(typeof this.props.chartData.charts.STAR === "object") ? this.props.chartData.STAR.General.map((chart, i) => {
+                                return <ChartButton key={i} chartName={chart.chartname} chartUrl={chart.proxy} chartId={chart.id} onChartOpen={this.props.onChartOpen} />
+                            }) : "No charts available" }
                         </TabPanel>
                         <TabPanel>
-                            Intermediates
+                            {(typeof this.props.chartData.charts.Intermediate === "object") ? this.props.chartData.charts.Intermediate.map((chart, i) => {
+                                return <ChartButton key={i} chartName={chart.chartname} chartUrl={chart.proxy} chartId={chart.id} onChartOpen={this.props.onChartOpen} />
+                            }) : "No charts available" }
                         </TabPanel>
                         <TabPanel>
-                            Approaches
+                            {(typeof this.props.chartData.charts.Approach === "object") ? this.props.chartData.charts.Approach.map((chart, i) => {
+                                return <ChartButton key={i} chartName={chart.chartname} chartUrl={chart.proxy} chartId={chart.id} onChartOpen={this.props.onChartOpen} />
+                            }) : "No charts available" }
                         </TabPanel>
                     </Tabs>
                 </div>

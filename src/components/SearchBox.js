@@ -22,6 +22,7 @@ class SearchBox extends Component {
             api.searchChart(this.state.value).then((response) => {
                 this.props.onSearch(response);
             }).catch((error) => {
+                console.log(error);
                 if (error.response.status === 404) {
                     this.props.onSearch("No Charts For Airport");
                 }
