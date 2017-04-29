@@ -18,15 +18,17 @@ class SearchBox extends Component {
     }
 
     handleSubmit(e) {
-        api.searchChart(this.state.value).then((response) => {
-            this.props.onSearch(response);
-        }).catch((error) => {
-            if (error.response.status === 404) {
-                alert("No charts found for that airport.");
-            } else {
-                alert("Unknown error occured");
-            }
-        });
+        if (this.state.value.length >= 3) {
+            api.searchChart(this.state.value).then((response) => {
+                this.props.onSearch(response);
+            }).catch((error) => {
+                if (error.response.status === 404) {
+                    this.props.onSearch("No Charts For Airport");
+                }
+            });
+        } else {
+            this.props.onSearch("Invalid airport identifier.  Are you using an ICAO identifier?");
+        }
         e.preventDefault();
     }
 

@@ -1,11 +1,28 @@
 import React, {Component} from 'react';
 import SearchBox from './SearchBox.js';
+import ChartList from "./ChartList.js";
 
 class ChartBox extends Component {
+    constructor(props) {
+        super(props);
+        this.handleData = this.handleData.bind(this);
+        this.state = {
+            chartData: ""
+        }
+    }
+
+    handleData(data) {
+        this.setState({
+            chartData: data
+        });
+    }
 
     render() {
         return (
-            <SearchBox onSearch={this.props.handleSubmit} />
+            <div>
+                <SearchBox onSearch={this.handleData} />
+                <ChartList chartData={this.state.chartData} />
+            </div>
         );
     }
 }
