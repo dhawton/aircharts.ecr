@@ -29,3 +29,14 @@ span.error::before {
     font-weight: 600;
     color: red;
 }
+
+.align-left {
+    text-align: left;
+}
+.padleft {
+    padding-left: 10px;
+}
+
+.padright {
+    padding-right: 10px;
+}
