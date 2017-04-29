@@ -21,7 +21,7 @@ class ChartBox extends Component {
         return (
             <div>
                 <SearchBox onSearch={this.handleData} />
-                <ChartList onChartOpen="" chartData={this.state.chartData} />
+                <ChartList onChartOpen="" chartData={this.state.chartData} displayChart={this.props.displayChart} />
             </div>
         );
     }

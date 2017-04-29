@@ -3,6 +3,7 @@ import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import ChartButton from './ChartButton.js';
 
 class ChartList extends Component {
+
     render() {
         let r = "";
         if (typeof this.props.chartData === "string") {
