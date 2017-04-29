@@ -23,3 +23,9 @@ span.error {
   padding: 5px 10px;
   border-radius: 5px;
 }
+
+span.error::before {
+    content: "Error! ";
+    font-weight: 600;
+    color: red;
+}
