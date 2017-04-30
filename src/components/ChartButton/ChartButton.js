@@ -10,12 +10,12 @@ class ChartButton extends Component {
     }
 
     handleChartClick(e) {
-        console.log(e.target);
+        this.props.displayChart(e.target.dataset.url);
     }
 
     render() {
         return (
-            <button className="chartButton" data-id={this.props.chartId} onClick={this.handleChartClick}>{he.decode(this.props.chartName)}</button>
+            <button className="chartButton" data-url={this.props.chartUrl} onClick={this.handleChartClick}>{he.decode(this.props.chartName)}</button>
         );
     }
 }
