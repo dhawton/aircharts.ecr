@@ -13,7 +13,7 @@ class ChartList extends Component {
             }
         } else {
             r = (
-                <div className="padleft padright">
+                <div className="padleft padright align-left">
                     <h2>{this.props.chartData.info.id} - {this.props.chartData.info.name}</h2>
 
                     <Tabs>
@@ -57,7 +57,7 @@ class ChartList extends Component {
 
 
         return (
-            <div className="padtop align-left">
+            <div className="padtop">
                 {r}
             </div>
         );

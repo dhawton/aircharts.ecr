@@ -26,7 +26,7 @@ class DisplayBoxOrChart extends Component {
     }
 
     handleSearchSubmit(e) {
-        if (this.state.search.length >= 3) {
+        if (this.state.search.length >= 3 && this.state.search.length < 5) {
             api.searchChart(this.state.search).then((response) => {
                 this.handleData(response);
             }).catch((error) => {
