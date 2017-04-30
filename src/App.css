@@ -40,3 +40,34 @@ span.error::before {
 .padright {
     padding-right: 10px;
 }
+
+.btn-red {
+    background-color: #d9534f;
+    color: rgb(255,255,255);
+    border: 1px solid #d43f3a;
+    padding: 5px 15px;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 4px;
+}
+.btn-red:hover,
+.btn-red:focus {
+    background-color: #d43f3a;
+    background-position: 0 -15px;
+}
+
+.btn-green {
+    background-image: linear-gradient(to bottom, #5cb58c 0, #419641 100%);
+    background-repeat: repeat-x;
+    color: rgb(255,255,255);
+    border: 1px solid #3e8f3e;
+    padding: 5px 15px;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 4px;
+}
+.btn-green:hover,
+.btn-green:focus {
+    background-color: #419641;
+    background-position: 0 -15px;
+}

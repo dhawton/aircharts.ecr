@@ -15,10 +15,9 @@ class DisplayBoxOrChart extends Component {
         this.state = {
             chart: "",
             search: "",
-            chartData: "",
+            chartData: ""
         }
     }
-
 
     handleData(data) {
         this.setState({
@@ -27,7 +26,6 @@ class DisplayBoxOrChart extends Component {
     }
 
     handleSearchSubmit(e) {
-        console.dir(e);
         if (this.state.search.length >= 3) {
             api.searchChart(this.state.search).then((response) => {
                 this.handleData(response);
@@ -44,7 +42,6 @@ class DisplayBoxOrChart extends Component {
     }
 
     handleSearchChange(e) {
-        console.dir(e);
         this.setState({
             search: e.target.value.toUpperCase()
         });
@@ -58,7 +55,7 @@ class DisplayBoxOrChart extends Component {
 
     render() {
         if (this.state.chart !== "") {
-            return <DisplayBox displayChart={this.displayChart} chart={this.props.chart} />
+            return <DisplayBox displayChart={this.displayChart} chart={this.state.chart} />
         } else {
             return <ChartBox chartData={this.state.chartData} handleData={this.handleData} handleSearchChange={this.handleSearchChange} searchState={this.state.search} handleSearchSubmit={this.handleSearchSubmit} displayChart={this.displayChart} />
         }
