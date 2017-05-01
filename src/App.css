@@ -9,6 +9,14 @@
   color: white;
 }
 
+.footer {
+    background-color: #cccccc;
+    height: 150px;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
 .App-intro {
   font-size: large;
 }

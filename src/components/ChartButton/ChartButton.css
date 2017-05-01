@@ -16,3 +16,15 @@
     background-color: #2774BC;
     background-position: 0 -15px;
 }
+
+@media only screen and (min-device-width: 1024px) {
+    .chartButton {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .chartButton {
+        width: 100%;
+    }
+}

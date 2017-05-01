@@ -12,6 +12,9 @@ class App extends Component {
                     <h2>AirCharts ECR</h2>
                 </div>
                 <DisplayBoxOrChart />
+                <div className="footer">
+                    <p>Charts are property of their respective owners and are presented here solely for entertainment purposes.  Use in real world navigation is prohibited.</p>
+                </div>
             </div>
         );
     }
