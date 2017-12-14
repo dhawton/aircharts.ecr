@@ -1,7 +1,7 @@
 {
   "name": "aircharts.ecr",
   "version": "0.1.0",
-  "homepage": "https://www.aircharts.org/ECR",
+  "homepage": "https://ecr.aircharts.org",
   "private": true,
   "dependencies": {
     "axios": "^0.16.1",
