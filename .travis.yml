@@ -12,11 +12,6 @@ before_install:
  - chmod +x docker-compose
  - sudo mv docker-compose /usr/local/bin
 
-install:
-  - sudo apt-get install -y linux-image-virtual kernel linux-image-extra-virtual
-  - curl -sSL https://get.docker.com/ | sudo sh
-  - sudo pip install docker-compose
-
 script:
   - docker-compose build
   - docker-compose run test
