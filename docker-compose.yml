@@ -5,4 +5,4 @@ services:
     container_name: aircharts-ecr
     build: .
     ports:
-      - 5000:5000
+      - 5001:80
